@@ -20,7 +20,7 @@ class CValidationState;
 #define START_MASTERNODE_PAYMENTS_TESTNET 1432907775
 #define START_MASTERNODE_PAYMENTS 1432907775
 
-static const int64_t DARKSEND_COLLATERAL = (35000*COIN); //35000
+static const int64_t DARKSEND_COLLATERAL = (1000*COIN); 
 static const int64_t DARKSEND_FEE = (0.002*COIN);
 static const int64_t DARKSEND_POOL_MAX = (1999999.99*COIN);
 /*
@@ -101,7 +101,7 @@ inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
 
 inline unsigned int GetTargetSpacing(int nHeight) { return IsProtocolV2(nHeight) ? 240 : 60; }
-inline int64_t GetMNCollateral() { return 35000; }
+inline int64_t GetMNCollateral() { return 1000; }
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
